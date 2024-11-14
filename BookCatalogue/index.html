@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Catalogue</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Online Bookstore</h1>
+    <nav>
+      <a href="#fiction">Fiction</a>
+      <a href="#non-fiction">Non-Fiction</a>
+      <a href="#mystery">Mystery</a>
+      <a href="#sci-fi">Sci-Fi</a>
+    </nav>
+  </header>
+
+  <!-- Filter and Search Section -->
+  <section class="controls">
+    <input type="text" id="searchBar" placeholder="Search for a book..." onkeyup="filterBooks()">
+    <select id="categoryFilter" onchange="filterBooks()">
+      <option value="all">All Categories</option>
+      <option value="fiction">Fiction</option>
+      <option value="non-fiction">Non-Fiction</option>
+      <option value="mystery">Mystery</option>
+      <option value="sci-fi">Sci-Fi</option>
+    </select>
+  </section>
+
+  <!-- Book Catalogue Section -->
+  <main id="bookCatalogue">
+    <div class="book" data-category="fiction">
+      <img src="images/book1.jpg" alt="Book Cover">
+      <h2>Title of Book 1</h2>
+      <p>Author: John Doe</p>
+      <p>Price: $12.99</p>
+      <button onclick="showDetails('Title of Book 1')">View Details</button>
+    </div>
+    <div class="book" data-category="non-fiction">
+      <img src="images/book2.jpg" alt="Book Cover">
+      <h2>Title of Book 2</h2>
+      <p>Author: Jane Smith</p>
+      <p>Price: $15.99</p>
+      <button onclick="showDetails('Title of Book 2')">View Details</button>
+    </div>
+    <div class="book" data-category="mystery">
+      <img src="images/book3.jpg" alt="Book Cover">
+      <h2>Title of Book 3</h2>
+      <p>Author: Robert Brown</p>
+      <p>Price: $9.99</p>
+      <button onclick="showDetails('Title of Book 3')">View Details</button>
+    </div>
+    <!-- Add more book divs as needed -->
+  </main>
+
+  <!-- Modal for Book Details -->
+  <div id="bookModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle">Book Title</h2>
+      <p id="modalDetails">Details about the book...</p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
